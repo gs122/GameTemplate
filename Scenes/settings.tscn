@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://p6hcheppb6kc"]
+
+[ext_resource type="Texture2D" uid="uid://b443efnfkt1" path="res://UI-Images/default-background.png" id="1_qb1ya"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 500.0
+offset_bottom = 250.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+text = "Settings Hello World"
+fit_content = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_top = 250.0
+offset_right = 500.0
+offset_bottom = 500.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.0352941)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qb1ya")

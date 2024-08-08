@@ -1,0 +1,284 @@
+[gd_scene load_steps=24 format=3 uid="uid://dk1e2rkcagi0x"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_kfteb"]
+[ext_resource type="Texture2D" uid="uid://b0sm8uyl3xppl" path="res://Sprites/icon.svg" id="2_hq75b"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="3_0fypa"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="4_0w1p1"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="5_v5r2o"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Bullet/BulletProps.gd" id="6_s55cx"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternLine.gd" id="7_tw6m3"]
+[ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="7_uxp5g"]
+[ext_resource type="Script" path="res://Scripts/Exit.gd" id="8_vvcqv"]
+[ext_resource type="Texture2D" uid="uid://c2cwlxfni1nfe" path="res://UI-Images/blank.png" id="9_antvv"]
+[ext_resource type="PackedScene" uid="uid://bmhlodrge1yi0" path="res://Prefabs/winScreenLayer.tscn" id="10_c5fht"]
+[ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHSpawnPoint.gd" id="10_ne1tj"]
+[ext_resource type="PackedScene" uid="uid://bmdgtb8eb1nnv" path="res://Prefabs/healthbar.tscn" id="11_bc4tf"]
+[ext_resource type="PackedScene" uid="uid://cy7giv5h3hnk8" path="res://Prefabs/mainCamera.tscn" id="13_igcfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3osen"]
+
+[sub_resource type="Curve2D" id="Curve2D_s36qb"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_15l5q"]
+resource_name = "PatternLine"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("7_tw6m3")
+offset = Vector2(0, 0)
+center = 1
+symmetric = true
+bullet = "1"
+nbr = 1
+iterations = -1
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 0.5
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_po4xc"]
+resource_name = "PatternOne"
+source_geometry_group_name = &"navigation_polygon_source_group"
+script = ExtResource("4_0w1p1")
+bullet = "1"
+nbr = 1
+iterations = -1
+pattern_angle = 0.0
+pattern_angle_target = NodePath("")
+pattern_angle_mouse = false
+forced_angle = 0.0
+forced_target = NodePath("")
+forced_lookat_mouse = false
+forced_pattern_lookat = true
+cooldown_stasis = false
+cooldown_spawn = 1.0
+cooldown_shoot = 0.0
+cooldown_next_spawn = 0.0
+cooldown_next_shoot = 0.0
+wait_tween_momentum = 0
+wait_tween_length = 0.0
+wait_tween_time = 0.0
+
+[sub_resource type="Curve2D" id="Curve2D_yfac0"]
+
+[sub_resource type="Curve" id="Curve_7a2fc"]
+
+[sub_resource type="Curve" id="Curve_sklmj"]
+
+[sub_resource type="PackedDataContainer" id="PackedDataContainer_jas3p"]
+script = ExtResource("6_s55cx")
+anim_more = Array[Resource("res://addons/BulletUpHell/Bullet/animStates.gd")]([])
+damage = 1.0
+speed = 200.0
+scale = 0.5
+angle = 0.0
+groups = PackedStringArray()
+spec_bounces = -1
+spec_no_collision = false
+spec_modulate_loop = 0.0
+spec_trail_length = 0.0
+spec_trail_width = 0.0
+spec_trail_modulate = Color(1, 1, 1, 1)
+spec_rotating_speed = 0.0
+death_after_time = 6.0
+death_outside_box = Rect2(0, 0, 0, 0)
+death_from_collision = true
+a_direction_equation = "2*cos(x)"
+a_curve_movement = 0
+a_speed_multiplier = SubResource("Curve_7a2fc")
+a_speed_multi_iterations = 0
+a_speed_multi_scale = 0.0
+trigger_container = ""
+trigger_wait_for_shot = true
+homing_type = 0
+homing_target = NodePath("")
+homing_steer = 0.0
+homing_time_start = 0.0
+homing_duration = 999.0
+scale_multi_iterations = 0
+scale_multiplier = SubResource("Curve_sklmj")
+scale_multi_scale = 1.0
+r_randomisation_chances = 1.0
+r_speed_choice = PackedFloat32Array()
+r_speed_variation = Vector3(0, 0, 0)
+r_scale_choice = PackedFloat32Array()
+r_scale_variation = Vector3(0, 0, 0)
+r_angle_choice = PackedFloat32Array()
+r_angle_variation = Vector3(0, 0, 0)
+r_group_choice = []
+r_bounce_choice = PackedInt32Array()
+r_bounce_variation = Vector3(0, 0, 0)
+r_no_coll_chances = 0.0
+r_modulate_variation = Vector3(0, 0, 0)
+r_trail_length_variation = Vector3(0, 0, 0)
+r_trail_color_variation = Vector3(0, 0, 0)
+r_rotating_variation = Vector3(0, 0, 0)
+r_death_after_choice = PackedFloat32Array()
+r_death_after_variation = Vector3(0, 0, 0)
+r_death_outside_chances = 0.0
+r_dir_equation_choice = PackedStringArray()
+r_curve_choice = []
+r_speed_multi_curve_choice = []
+r_speed_multi_iter_variation = Vector3(0, 0, 0)
+r_speed_multi_scale_variation = Vector3(0, 0, 0)
+r_trigger_choice = PackedStringArray()
+r_wait_for_shot_chances = 0.0
+r_homing_target_choice = []
+r_special_target_choice = PackedStringArray()
+r_group_target_choice = PackedStringArray()
+r_pos_target_choice = PackedVector2Array()
+r_steer_choice = PackedFloat32Array()
+r_steer_variation = Vector3(0, 0, 0)
+r_homing_delay_choice = PackedFloat32Array()
+r_homing_delay_variation = Vector3(0, 0, 0)
+r_homing_dur_choice = PackedFloat32Array()
+r_homing_dur_variation = Vector3(0, 0, 0)
+r_scale_multi_curve_choice = []
+r_scale_multi_iter_variation = Vector3(0, 0, 0)
+r_scale_multi_scale_variation = Vector3(0, 0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u0yo0"]
+
+[node name="Level" type="Node2D"]
+
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PauseMenu" type="Control" parent="PauseLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_uxp5g")
+
+[node name="Panel" type="Panel" parent="PauseLayer/PauseMenu"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseLayer/PauseMenu/Panel"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PauseLayer/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="PauseLayer/PauseMenu/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 15
+
+[node name="Resume" type="Button" parent="PauseLayer/PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Settings" type="Button" parent="PauseLayer/PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer"]
+visible = false
+layout_mode = 2
+text = "Settings"
+
+[node name="Quit to Menu" type="Button" parent="PauseLayer/PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Quit to Menu"
+
+[node name="WinScreenLayer" parent="." instance=ExtResource("10_c5fht")]
+
+[node name="HealthBar" parent="." instance=ExtResource("11_bc4tf")]
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2(478, 490)
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_kfteb")
+metadata/_edit_group_ = true
+
+[node name="PlayerSprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_hq75b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(6.335, 6.335)
+shape = SubResource("RectangleShape2D_3osen")
+
+[node name="Patterns" type="Node2D" parent="."]
+
+[node name="SpawnPattern1" type="Path2D" parent="Patterns"]
+curve = SubResource("Curve2D_s36qb")
+script = ExtResource("3_0fypa")
+id = "one"
+pattern = SubResource("NavigationPolygon_15l5q")
+
+[node name="SpawnPattern2" type="Path2D" parent="Patterns"]
+curve = SubResource("Curve2D_s36qb")
+script = ExtResource("3_0fypa")
+id = "two"
+pattern = SubResource("NavigationPolygon_po4xc")
+
+[node name="SpawnPattern3" type="Path2D" parent="Patterns"]
+curve = SubResource("Curve2D_s36qb")
+script = ExtResource("3_0fypa")
+id = "three"
+pattern = SubResource("NavigationPolygon_po4xc")
+
+[node name="SpawnPattern4" type="Path2D" parent="Patterns"]
+curve = SubResource("Curve2D_s36qb")
+script = ExtResource("3_0fypa")
+id = "four"
+pattern = SubResource("NavigationPolygon_po4xc")
+
+[node name="BulletProps" type="Node2D" parent="."]
+
+[node name="BulletPattern1" type="Path2D" parent="BulletProps"]
+curve = SubResource("Curve2D_yfac0")
+script = ExtResource("5_v5r2o")
+id = "1"
+props = SubResource("PackedDataContainer_jas3p")
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+
+[node name="SpawnPoint1" type="Node2D" parent="SpawnPoints"]
+position = Vector2(500, 0)
+rotation = 2.35619
+script = ExtResource("10_ne1tj")
+active = true
+auto_pattern_id = "one"
+shared_area_name = "0"
+rotating_speed = 0.0
+pool_amount = 50
+auto_start_on_cam = true
+auto_start_after_time = 0.0
+auto_start_at_distance = 5.0
+auto_distance_from = NodePath("")
+trigger_container = NodePath("")
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(23, 25)
+script = ExtResource("8_vvcqv")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+scale = Vector2(1.9, 1.9)
+shape = SubResource("RectangleShape2D_u0yo0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Exit"]
+modulate = Color(0, 1, 0, 1)
+texture = ExtResource("9_antvv")
+
+[node name="MainCamera" parent="." instance=ExtResource("13_igcfk")]
+metadata/_edit_lock_ = true
+
+[connection signal="button_up" from="PauseLayer/PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Resume" to="PauseLayer/PauseMenu" method="_on_resume_button_up"]
+[connection signal="button_up" from="PauseLayer/PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Settings" to="PauseLayer/PauseMenu" method="_on_settings_button_up"]
+[connection signal="button_up" from="PauseLayer/PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Quit to Menu" to="PauseLayer/PauseMenu" method="_on_quit_to_menu_button_up"]
+[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]
