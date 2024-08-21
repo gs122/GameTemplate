@@ -4,7 +4,6 @@ class_name MainCamera
 var originalXPos = 250;
 var originalYPos = 250;
 
-// Amount by which the camera shakes
 var shakeXRange = 10;
 var shakeYRange = 10;
 var shakeCount = 5;
