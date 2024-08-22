@@ -1,8 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://cp6hhrhb5b8o8"]
+[gd_scene load_steps=21 format=3 uid="uid://cp6hhrhb5b8o8"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_h8wu8"]
 [ext_resource type="PackedScene" uid="uid://cw3ub3y0wx76c" path="res://Prefabs/hurtLayer.tscn" id="1_so27y"]
-[ext_resource type="Texture2D" uid="uid://b0sm8uyl3xppl" path="res://Sprites/icon.svg" id="2_jy8c2"]
+[ext_resource type="PackedScene" uid="uid://c5hi8ydp8ogpg" path="res://Prefabs/player.tscn" id="2_mkr31"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHPattern.gd" id="3_vqvd5"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/SpawnPatterns/PatternOne.gd" id="4_8s6de"]
 [ext_resource type="Script" path="res://addons/BulletUpHell/Nodes/BuHBulletProperties.gd" id="5_hte2e"]
@@ -14,8 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://d1pufu4j8ycnx" path="res://Prefabs/pauseLayer.tscn" id="11_x135l"]
 [ext_resource type="PackedScene" uid="uid://bmdgtb8eb1nnv" path="res://Prefabs/healthbar.tscn" id="12_uvqty"]
 [ext_resource type="PackedScene" uid="uid://cy7giv5h3hnk8" path="res://Prefabs/mainCamera.tscn" id="14_65bd0"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_i2vj1"]
 
 [sub_resource type="Curve2D" id="Curve2D_s36qb"]
 
@@ -126,18 +123,7 @@ r_scale_multi_scale_variation = Vector3(0, 0, 0)
 
 [node name="HurtLayer" parent="." instance=ExtResource("1_so27y")]
 
-[node name="Player" type="Area2D" parent="."]
-position = Vector2(250, 480)
-scale = Vector2(0.2, 0.2)
-script = ExtResource("1_h8wu8")
-metadata/_edit_group_ = true
-
-[node name="PlayerSprite" type="Sprite2D" parent="Player"]
-texture = ExtResource("2_jy8c2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-scale = Vector2(3.6, 3.6)
-shape = SubResource("CircleShape2D_i2vj1")
+[node name="Player" parent="." instance=ExtResource("2_mkr31")]
 
 [node name="Patterns" type="Node2D" parent="."]
 
@@ -252,5 +238,3 @@ texture = ExtResource("10_6qg1e")
 [node name="HealthBar" parent="." instance=ExtResource("12_uvqty")]
 
 [node name="MainCamera" parent="." instance=ExtResource("14_65bd0")]
-
-[connection signal="area_entered" from="Player" to="Player" method="_on_area_entered"]

@@ -6,7 +6,7 @@ var vel := Vector2(0,0);
 var hp: int = 10;
 var wonLevel = false;
 
-@onready var pause_menu = get_parent().get_node("PauseLayer/PauseMenu")
+@onready var pause_menu = get_parent().get_node("PauseLayer")
 @onready var healthbar = get_parent().get_node("HealthBar");
 @onready var mainCamera = get_parent().get_node("MainCamera");
 
@@ -34,13 +34,8 @@ func _physics_process(delta):
 	position.x = clamp(position.x, 0, 500)
 	position.y = clamp(position.y, 0, 500)
 	
-	#if Input.is_action_pressed("cancel"):
-		#if get_tree().paused:
-			#get_tree().paused = false
-			#pause_menu.hide()
-		#else:
-			#get_tree().paused = true
-			#pause_menu.show()
+
+
 
 func findObjects():
 	healthbar = get_parent().get_node("HealthBar");

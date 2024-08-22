@@ -12,4 +12,4 @@ func _process(delta):
 
 
 func _on_back_to_menu_button_up():
-	GameManager.moveToLevel("title");
+	GameManager.moveToScene("title");

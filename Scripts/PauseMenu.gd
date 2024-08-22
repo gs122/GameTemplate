@@ -1,10 +1,13 @@
 extends Control
 
-# TODO: Fix bugs
+var pauseLayer = get_parent()
+
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_resume_button_up():
 	get_tree().paused = false;
-	hide();
+	pauseLayer.hide();
 
 
 func _on_settings_button_up():

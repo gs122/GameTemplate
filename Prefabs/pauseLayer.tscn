@@ -1,16 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://d1pufu4j8ycnx"]
 
-[ext_resource type="Script" path="res://Scripts/PauseMenu.gd" id="1_x6i7p"]
+[ext_resource type="Script" path="res://Prefabs/pauseLayer.gd" id="1_aason"]
 
 [node name="PauseLayer" type="CanvasLayer"]
 visible = false
+script = ExtResource("1_aason")
 
 [node name="PauseMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_x6i7p")
 
 [node name="Panel" type="Panel" parent="PauseMenu"]
 custom_minimum_size = Vector2(500, 500)
@@ -46,6 +46,5 @@ text = "Settings"
 layout_mode = 2
 text = "Quit to Menu"
 
-[connection signal="button_up" from="PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Resume" to="PauseMenu" method="_on_resume_button_up"]
-[connection signal="button_up" from="PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Settings" to="PauseMenu" method="_on_settings_button_up"]
-[connection signal="button_up" from="PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Quit to Menu" to="PauseMenu" method="_on_quit_to_menu_button_up"]
+[connection signal="button_up" from="PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Resume" to="." method="_on_resume_button_up"]
+[connection signal="button_up" from="PauseMenu/Panel/VBoxContainer/HBoxContainer/GridContainer/Quit to Menu" to="." method="_on_quit_to_menu_button_up"]
