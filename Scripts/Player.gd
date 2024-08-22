@@ -33,9 +33,6 @@ func _physics_process(delta):
 	
 	position.x = clamp(position.x, 0, 500)
 	position.y = clamp(position.y, 0, 500)
-	
-
-
 
 func findObjects():
 	healthbar = get_parent().get_node("HealthBar");
